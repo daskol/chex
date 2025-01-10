@@ -358,7 +358,7 @@ class DataclassesTest(parameterized.TestCase):
     )
     leaves = [l for _, l in keys_and_leaves]
     new_obj = treedef.unflatten(leaves)
-    self.assertEqual(new_obj, obj)
+    asserts.assert_trees_all_equal(new_obj, obj)
 
   def test_tree_map_with_keys(self):
     obj = dummy_dataclass()
